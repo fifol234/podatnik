@@ -1,0 +1,99 @@
+body {
+  background: #f5f5f5;
+  font-family: Arial, sans-serif;
+}
+
+.app {
+  background-color: #ff77c9;
+  border-radius: 30px;
+  border-style: solid;
+  padding-top: 50px;
+  height: 550px;
+  width: 900px;
+  margin: 50px auto;
+  margin-top: 150px;
+  text-align: center;
+  box-shadow: 0 0 15px rgba(0,0,0,0.2);
+}
+
+h1 {
+  color: white;
+  font-size: 36px;
+  font-weight: bold;
+  text-shadow: 2px 2px gray;
+}
+
+select {
+  padding: 10px;
+  border-radius: 30px;
+  border: none;
+  font-size: 16px;
+  text-align: start;
+  box-shadow: inset 0 0 5px #aaa;
+  display: block;
+  margin: 0 auto;
+  width: 80%;
+  max-width: 80%;
+  box-sizing: border-box;
+  overflow-x: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+
+.select-wrapper {
+  width: 100px;
+  margin: 0 auto;
+  max-width: 100px;
+}
+
+.select-wrapper select {
+  width: 100%;
+  padding: 10px;
+  border-radius: 30px;
+  border: none;
+  font-size: 16px;
+  text-align: center;
+  box-shadow: inset 0 0 5px #aaa;
+  box-sizing: border-box;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+#pytanieBox {
+  background-color: white;
+  margin: 20px auto;
+  padding: 20px;
+  border-radius: 25px;
+  min-height: 100px;
+  width: 80%;
+  font-size: 16px;
+  border-style: solid;
+
+  /* Centrowanie tekstu */
+  display: flex;
+  justify-content: center;   /* poziomo */
+  align-items: center;       /* pionowo */
+  text-align: center;
+
+  /* Jeśli pytanie ma więcej linii */
+  flex-direction: column;
+  white-space: pre-wrap;
+}
+
+button {
+  background: linear-gradient(to bottom, #ffffff, #dddddd);
+  border: none;
+  border-radius: 30px;
+  padding: 15px 30px;
+  font-size: 18px;
+  box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+  cursor: pointer;
+  font-weight: bold;
+  color: #333;
+  text-shadow: 1px 1px #fff;
+}
+
+button:hover {
+  background: linear-gradient(to bottom, #f0f0f0, #cccccc);
+}

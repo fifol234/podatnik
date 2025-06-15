@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+  <meta charset="UTF-8">
+  <title>Podatniczek</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="select-wrapper"></div>
+  <div class="app">
+    <h1>PODATNICZEK</h1>
+      <select id="dzial">
+      <option disabled selected>Wybierz dział...</option>
+      <option value="I. ŹRÓDŁA PRAWA I WYKŁADNIA PRAWA">I. ŹRÓDŁA PRAWA I WYKŁADNIA PRAWA</option>
+      <option value="II. ANALIZA PODATKOWA">II. ANALIZA PODATKOWA</option>
+      <option value="III. PODSTAWY MIĘDZYNARODOWEGO ORAZ WSPÓLNOTOWEGO PRAWA PODATKOWEGO">III. PODSTAWY MIĘDZYNARODOWEGO ORAZ WSPÓLNOTOWEGO PRAWA PODATKOWEGO</option>
+      <option value="IV. MATERIALNE PRAWO PODATKOWE">IV. MATERIALNE PRAWO PODATKOWE</option>
+      <option value="Podatek od towarów i usług">Podatek od towarów i usług</option>
+      <option value="Podatek dochodowy od osób fizycznych">Podatek dochodowy od osób fizycznych</option>
+      <option value="Podatek dochodowy od osób prawnych">Podatek dochodowy od osób prawnych</option>
+      <option value="Podatek tonażowy">Podatek tonażowy</option>
+      <option value="Podatek akcyzowy">Podatek akcyzowy</option>
+      <option value="Podatek od wydobycia niektórych kopalin">Podatek od wydobycia niektórych kopalin</option>
+      <option value="Podatek od gier">Podatek od gier</option>
+      <option value="Podatek od niektórych instytucji finansowych">Podatek od niektórych instytucji finansowych</option>
+      <option value="Podatki i opłaty samorządowe">Podatki i opłaty samorządowe</option>
+      <option value="V. POSTĘPOWANIE PRZED ORGANAMI ADMINISTRACJI PUBLICZNEJ I SĄDAMI ADMINISTRACYJNYMI ORAZ POSTĘPOWANIE EGZEKUCYJNE W ADMINISTRACJI">V. POSTĘPOWANIE PRZED ORGANAMI ADMINISTRACJI PUBLICZNEJ I SĄDAMI...</option>
+      <option value="Postępowanie egzekucyjne w administracji">Postępowanie egzekucyjne w administracji</option>
+      <option value="VI. MIĘDZYNARODOWE, WSPÓLNOTOWE I KRAJOWE PRAWO CELNE">VI. MIĘDZYNARODOWE, WSPÓLNOTOWE I KRAJOWE PRAWO CELNE</option>
+      <option value="VII. PRAWO DEWIZOWE">VII. PRAWO DEWIZOWE</option>
+      <option value="VIII. PRAWO KARNE SKARBOWE">VIII. PRAWO KARNE SKARBOWE</option>
+      <option value="IX. ORGANIZACJA I FUNKCJONOWANIE KRAJOWEJ ADMINISTRACJI SKARBOWEJ">IX. ORGANIZACJA I FUNKCJONOWANIE KRAJOWEJ ADMINISTRACJI SKARBOWEJ</option>
+      <option value="X. RACHUNKOWOŚĆ">X. RACHUNKOWOŚĆ</option>
+      <option value="XI. EWIDENCJA PODATKOWA I ZASADY PROWADZENIA KSIĄG RACHUNKOWYCH">XI. EWIDENCJA PODATKOWA I ZASADY PROWADZENIA KSIĄG RACHUNKOWYCH</option>
+      <option value="XII. PRZEPISY O DORADZTWIE PODATKOWYM I ETYKA ZAWODOWA">XII. PRZEPISY O DORADZTWIE PODATKOWYM I ETYKA ZAWODOWA</option>
+    </select>
+
+    <div id="pytanieBox"></div>
+
+    <button onclick="losujPytanie()">Losuj pytanie!</button>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
