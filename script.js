@@ -1,3 +1,15 @@
+document.getElementById("nav-nauka").addEventListener("click", function (e) {
+    e.preventDefault();
+    document.getElementById("sekcja-nauka").style.display = "block";
+    document.getElementById("sekcja-egzamin").style.display = "none";
+  });
+  
+  document.getElementById("nav-egzamin").addEventListener("click", function (e) {
+    e.preventDefault();
+    document.getElementById("sekcja-nauka").style.display = "none";
+    document.getElementById("sekcja-egzamin").style.display = "block";
+  });
+
 const pytania = {
     "I. ŹRÓDŁA PRAWA I WYKŁADNIA PRAWA": [
         "1. Bezpośrednie stosowanie norm konstytucyjnych.",
@@ -533,7 +545,6 @@ const pytania = {
 "63. Zasady poboru zryczałtowanego podatku dochodowego od osób prawnych w przypadku należności wypłacanych na rzecz zagranicznych osób prawnych w wysokości przekraczającej w roku podatkowym obowiązującym u wypłacającego należności łącznie kwotę 2.000.000 zł na rzecz tego samego podatnika.",
 "64. Zasady ustalania dochodu do opodatkowania podatkiem dochodowym od osób prawnych z tytułu odpłatnego zbycia walut wirtualnych.",
 "65. Zasady opodatkowania należności licencyjnych podatkiem dochodowym od osób prawnych.",
-"66. [Pominięte - brak w oryginalnej liście]",
 "67. Opodatkowanie podatkiem dochodowym od osób prawnych dochodów z dywidend.",
 "68. Opodatkowanie podatkiem dochodowym od osób prawnych dywidendy uzyskanej w Polsce przez podmiot mający siedzibę na terytorium UE lub EOG.",
 "69. Opodatkowanie podatkiem dochodowym od osób prawnych dywidendy uzyskanej w Polsce przez podmiot mający siedzibę poza UE, EOG lub Konfederacją Szwajcarską.",
@@ -1335,4 +1346,44 @@ function losujPytanie() {
   const index = Math.floor(Math.random() * pytaniaZDzialu.length);
   const pytanie = pytaniaZDzialu[index];
   document.getElementById("pytanieBox").innerHTML = `<strong>Dział:</strong> ${dzial}<br><strong>Nr pytania:</strong> ${index + 1}<br><br>${pytanie}`;
+}
+
+function rozpocznijEgzamin() {
+  const pytaniaEgzamin = [];
+  const wszystkiePytania = [];
+
+  // Zbieramy wszystkie pytania z każdego działu
+  for (const dzial in pytania) {
+    pytania[dzial].forEach((tresc, index) => {
+      wszystkiePytania.push({
+        dzial: dzial,
+        numer: index + 1,
+        tresc: tresc
+      });
+    });
+  }
+
+  // Losujemy 10 unikalnych pytań
+  const indeksy = new Set();
+  while (indeksy.size < 10 && indeksy.size < wszystkiePytania.length) {
+    const losowyIndeks = Math.floor(Math.random() * wszystkiePytania.length);
+    indeksy.add(losowyIndeks);
+  }
+
+  indeksy.forEach(i => {
+    pytaniaEgzamin.push(wszystkiePytania[i]);
+  });
+
+  // Wyświetlamy je w kontenerze
+  const kontener = document.getElementById("pytania-egzamin");
+  kontener.innerHTML = ""; // Wyczyść poprzedni egzamin
+
+  pytaniaEgzamin.forEach((pytanie, i) => {
+    const div = document.createElement("div");
+    div.classList.add("pytanie-egzamin");
+    div.innerHTML = `<strong>Pytanie ${i + 1}</strong><br>
+      <em>Dział:</em> ${pytanie.dzial}<br>
+      <p>${pytanie.tresc}</p>`;
+    kontener.appendChild(div);
+  });
 }
